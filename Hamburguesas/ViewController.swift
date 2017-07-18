@@ -10,6 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dameUnPais: UILabel!
+    
+    let colores = Colores()
+    let paises = ColeccionDePaises()
+    
+    
+    @IBOutlet weak var dameUnaHamburguesa: UILabel!
+    
+    let hamburguesas = ColeccionDeHamburguesas()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +29,16 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func cambiaDePaisYDeHamburguesa() {
+        
+        dameUnPais.text = paises.obtenPais()
+        dameUnaHamburguesa.text = hamburguesas.obtenHamburguesa()
+        let colorAleatorio = colores.regresaColorAleatorio()
+        view.backgroundColor = colorAleatorio
+        view.tintColor = colorAleatorio
     }
 
 
